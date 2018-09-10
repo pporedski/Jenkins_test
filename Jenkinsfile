@@ -1,10 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        stage('abc'){
-            steps {
-                    echo '1'
-            }
-        }
+  agent any
+  stages {
+    stage('abc') {
+      steps {
+        echo '1'
+      }
     }
+  }
 }
