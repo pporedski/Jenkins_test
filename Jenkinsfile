@@ -1,25 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1'){
+        stage('abc'){
             steps {
                 step {
-                    echo '1'
-                    echo '2'
-                    echo '3'
+                    echo 'a'
+                    echo 'b'
+                    echo 'c'
                 }
                 step {
-                    echo '4'
-                    echo '5'
-                    echo '6'
+                    echo 'A'
+                    echo 'B'
+                    echo 'C'
                 }
             }
         }
-        stage('Stage 2'){
+        stage('def'){
             step {
-                echo '7'
-                echo '8'
-                echo '9'
+                echo 'd'
+                echo 'e'
+                echo 'f'
             }
         }
     }
