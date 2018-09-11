@@ -43,7 +43,7 @@ pipeline {
                 }
                 stage('parameter'){
                     steps {
-                        echo "My name is $(testParameter)"
+                        echo "$(testParameter)"
                     }
                 }
             }
