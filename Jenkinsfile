@@ -13,12 +13,13 @@ pipeline {
                 echo 'd'
                 echo 'e'
                 echo 'f'
-            }
-            stage ('123'){
-                steps {
-                    echo '1'
-                    echo '2'
-                    echo '3'
+            
+                stage ('123'){
+                    steps {
+                        echo '1'
+                        echo '2'
+                        echo '3'
+                    }
                 }
             }
         }
