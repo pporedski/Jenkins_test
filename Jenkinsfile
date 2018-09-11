@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters{
+        text(name: testParameter, defaultValue: 'Leeroy Jenkins')
+    }
     stages {
         stage('abc'){
             steps {
@@ -36,6 +39,11 @@ pipeline {
                         echo '7'
                         echo '8'
                         echo '9'
+                    }
+                }
+                stage('parameter'){
+                    steps {
+                        echo "My name is $(testParameter)"
                     }
                 }
             }
