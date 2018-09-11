@@ -17,10 +17,12 @@ pipeline {
         }   
         stage ('123'){
             parallel{
-                steps {
-                    echo '1'
-                    echo '2'
-                    echo '3'
+                stage('456'){
+                    steps {
+                        echo '1'
+                        echo '2'
+                        echo '3'
+                    }
                 }
             }
         }
