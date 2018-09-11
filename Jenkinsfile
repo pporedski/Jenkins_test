@@ -22,6 +22,11 @@ pipeline {
                     echo 'e'
                     echo 'f'
                 }
+                step {
+                    echo 'D'
+                    echo 'E'
+                    echo 'F'
+                }
             }
         }
     }
