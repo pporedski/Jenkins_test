@@ -15,7 +15,7 @@ pipeline {
                 echo 'f'
             }
         }   
-        stage ('123'){
+        stage('123'){
             steps {
                 echo '1'
                 echo '2'
@@ -28,6 +28,11 @@ pipeline {
                         echo '5'
                         echo '6'
                     }
+                }
+                stage('789'){
+                    echo '7'
+                    echo '8'
+                    echo '9'
                 }
             }
         }
