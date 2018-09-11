@@ -16,12 +16,17 @@ pipeline {
             }
         }   
         stage ('123'){
+            steps {
+                echo '1'
+                echo '2'
+                echo '3'
+            }
             parallel{
                 stage('456'){
                     steps {
-                        echo '1'
-                        echo '2'
-                        echo '3'
+                        echo '4'
+                        echo '5'
+                        echo '6'
                     }
                 }
             }
