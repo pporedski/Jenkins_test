@@ -16,10 +16,12 @@ pipeline {
             }
         }
         stage('def'){
-            step {
-                echo 'd'
-                echo 'e'
-                echo 'f'
+            steps {
+                step {
+                    echo 'd'
+                    echo 'e'
+                    echo 'f'
+                }
             }
         }
     }
