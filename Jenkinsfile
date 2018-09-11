@@ -8,11 +8,6 @@ pipeline {
                     echo 'b'
                     echo 'c'
                 }
-                step {
-                    echo 'A'
-                    echo 'B'
-                    echo 'C'
-                }
             }
         }
         stage('def'){
@@ -21,11 +16,6 @@ pipeline {
                     echo 'd'
                     echo 'e'
                     echo 'f'
-                }
-                step {
-                    echo 'D'
-                    echo 'E'
-                    echo 'F'
                 }
             }
         }
