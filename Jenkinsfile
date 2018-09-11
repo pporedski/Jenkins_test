@@ -3,16 +3,16 @@ pipeline {
     stages {
         stage('abc'){
             steps {
-                echo 'a'
-                echo 'b'
-                echo 'c'
+                echo '1'
+                echo '2'
+                echo '3'
             }
         }
         stage('def'){
             steps {
-                echo 'd'
-                echo 'e'
-                echo 'f'
+                echo '4'
+                echo '5'
+                echo '6'
             }
         }
     }
