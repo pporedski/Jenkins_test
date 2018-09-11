@@ -30,9 +30,11 @@ pipeline {
                     }
                 }
                 stage('789'){
-                    echo '7'
-                    echo '8'
-                    echo '9'
+                    steps {
+                        echo '7'
+                        echo '8'
+                        echo '9'
+                    }
                 }
             }
         }
