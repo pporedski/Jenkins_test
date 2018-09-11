@@ -15,12 +15,14 @@ pipeline {
                 echo 'f'
             }
         }   
-        stage('123'){
+        stage('number'){
             parallel{
-                steps {
-                    echo '1'
-                    echo '2'
-                    echo '3'
+                stage('123'){
+                    steps {
+                        echo '1'
+                        echo '2'
+                        echo '3'
+                    }                
                 }
                 stage('456'){
                     steps {
