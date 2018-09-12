@@ -53,7 +53,7 @@ pipeline {
                 script{
                     def character = ['Mario','Luigi','Yoshi','Bowser']
                     for (int i = 0; i < character.size(); ++i) {
-                        echo "I am ${character[i]}"
+                        echo "I am ${character[]}"
                     }
                 }
             }
