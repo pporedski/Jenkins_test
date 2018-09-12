@@ -44,7 +44,9 @@ pipeline {
             }
         }
         stage('environment'){
-            echo "${str}"
+                steps{
+                echo "${str}"
+            }
         }
     }
 }
