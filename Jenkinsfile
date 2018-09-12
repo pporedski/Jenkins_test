@@ -1,52 +1,98 @@
 pipeline {
-    agent any
-    parameters{
-        text(name: testParameter, defaultValue: 'Leeroy Jenkins')
+    environment {
+        //Variables need to be defined here
+        stringTest = 'This is a test string'
+        blub = 'blub'
+        didSucceed = true
     }
+
+    agent any
     stages {
-        stage('abc'){
+        stage('Echo') {
             steps {
-                echo 'a'
-                echo 'b'
-                echo 'c'
+                //Simple echo testing
+                echo 'One'
+                echo 'Two'
+            }
+
+        }
+
+        stage('Variable') {
+            steps {
+                //Testing if you can declare a variable anywhere and use it anywhere
+                echo "${stringTest}"
+                stringTest()
             }
         }
-        stage('def'){
-            steps {
-                echo 'd'
-                echo 'e'
-                echo 'f'
+            
+        stage('Tests') {
+            parallel {
+                //Testing if you can pass items while in a parallel stage
+                stage('Pass list'){
+                    steps {
+                        //Passing lists tests
+                        listTest(['a', 'b', 'c'])
+                    }
+                }
+
+                stage('Parallel') {
+                    steps {
+                        echo 'blub'
+                    }
+                }
+            }
+        }
+
+        stage('More parallels') {
+            parallel {
+                stage('Looping') {
+                steps {
+                    script { 
+                        //Loop tests
+                        def browsers = ['chrome', 'firefox', 'edge', 'internet explorer']
+                        for (int i = 0; i < browsers.size(); ++i) {
+                            echo "Testing ${browsers[i]}"
+                            stringTest()
+                        }
+                        }
+                    }
+                }
+
+                stage('Calling') {
+                    steps {
+                        script {
+                            //Testing if you can pass a def to a method and iterate over it
+                            def fruits = ['Apple', 'Banana', 'Grapes', 'Tomato']
+                            fruitTest(fruits)
+                        }
+                }
+            }
+
             }
         }   
-        stage('number'){
-            parallel{
-                stage('123'){
-                    steps {
-                        echo '1'
-                        echo '2'
-                        echo '3'
-                    }                
-                }
-                stage('456'){
-                    steps {
-                        echo '4'
-                        echo '5'
-                        echo '6'
-                    }
-                }
-                stage('789'){
-                    steps {
-                        echo '7'
-                        echo '8'
-                        echo '9'
-                    }
-                }
-                stage('parameter'){
-                    steps {
-                        echo "${testParameter}"
-                    }
-                }
-            }
+            
+
+
+
         }
+}
+
+    def fruitTest(fruit) {
+        for(int i = 0; i < fruit.size(); ++i) {
+            echo "Nom nom, these are the fruits I have: ${fruit[i]}"
+        }
+        
     }
+
+    def loopTest(browsers) {
+        echo "Testing the ${browsers} browser!"
+    }
+
+    def stringTest () {
+        sh "echo ${blub}"
+    }
+
+    def listTest (test) {
+        //Returns a string of the list??
+        println test
 }
