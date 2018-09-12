@@ -43,7 +43,7 @@ pipeline {
                 }
             }
         }
-        stage('environment'){
+        stage('Who is there'){
                 steps{
                 echo "${str}"
             }
