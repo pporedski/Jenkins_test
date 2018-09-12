@@ -48,7 +48,7 @@ pipeline {
                 echo "${str}"
             }
         }
-        stage('bla'){
+        stage('for'){
             steps{
                 script{
                     def character = ['Mario','Luigi','Yoshi','Bowser']
