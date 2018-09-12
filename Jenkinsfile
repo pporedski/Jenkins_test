@@ -18,7 +18,7 @@ pipeline {
                 echo 'f'
             }
         }   
-        stage('number'){
+        stage('numbers'){
             parallel{
                 stage('123'){
                     steps {
@@ -42,6 +42,9 @@ pipeline {
                     }
                 }
             }
+        }
+        stage('environment'){
+            echo "${str}"
         }
     }
 }
