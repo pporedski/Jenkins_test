@@ -66,9 +66,10 @@ pipeline {
             }
         }
     }
-    def colorsTest(colors) {
-        for(int i = 0; i < colors.size(); ++i) {
-            echo "I know these colors: ${colors[i]}"
-        }
+}    
+def colorsTest(colors) {
+    for(int i = 0; i < colors.size(); ++i) {
+        echo "I know these colors: ${colors[i]}"
     }
 }
+
