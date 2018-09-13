@@ -66,7 +66,7 @@ pipeline {
                 }
             }
         }
-        stage('wait until'){
+        stage('wait until 1'){
             steps {
                 timeout(2) {
                     waitUntil{
@@ -82,7 +82,7 @@ pipeline {
                 sh 'echo "This is a test" > test.txt'
             }
         }
-        stage('wait until'){
+        stage('wait until 2'){
             steps {
                 timeout(2) {
                     waitUntil{
