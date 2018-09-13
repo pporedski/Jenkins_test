@@ -66,6 +66,16 @@ pipeline {
                 }
             }
         }
+        stage('wait until'){
+            steps {
+                timeout(2) {
+                    waitUntil{
+                        fileExists('test.txt')
+                    }
+                }
+                echo "done"
+            }
+        }
         stage('create file') {
             steps {
                 sleep(30)
