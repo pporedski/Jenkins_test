@@ -72,6 +72,16 @@ pipeline {
                 sh 'echo "This is a test" > test.txt'
             }
         }
+        stage('wait until'){
+            steps {
+                timeout(2) {
+                    waitUntil{
+                        fileExists('test.txt')
+                    }
+                }
+                echo "done"
+            }
+        }
     }
 }    
 def colorsTest(colors) {
