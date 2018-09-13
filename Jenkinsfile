@@ -66,6 +66,12 @@ pipeline {
                 }
             }
         }
+        stage('create file') {
+            steps {
+                sleep(30)
+                sh 'echo "This is a test" > test.txt'
+            }
+        }
     }
 }    
 def colorsTest(colors) {
