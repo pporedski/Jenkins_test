@@ -58,15 +58,17 @@ pipeline {
                 }
             }
         }
-        //stage('bla'){
-        //    steps{
-        //        def colors = ['blue','red','green','yellow']
-        //    }
-        //}
-    //}
-    //def colorsTest(colors) {
-    //    for(int i = 0; i < colors.size(); ++i) {
-    //        echo "I know these colors: ${colors[i]}"
-    //    }
+        stage('bla'){
+            steps{
+                script{
+                    def colors = ['blue','red','green','yellow']
+                }
+            }
+        }
+    }
+    def colorsTest(colors) {
+        for(int i = 0; i < colors.size(); ++i) {
+            echo "I know these colors: ${colors[i]}"
+        }
     }
 }
