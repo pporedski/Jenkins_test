@@ -62,6 +62,7 @@ pipeline {
             steps{
                 script{
                     def colors = ['blue','red','green','yellow']
+                    colorsTest(colors)
                 }
             }
         }
