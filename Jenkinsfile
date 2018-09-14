@@ -1,6 +1,10 @@
 import groovy.json.JsonOutput
 
 node('master') {
+    stage('Checkout'){
+        echo 'Getting source code...'
+        checkout scm
+    }
     stage('DataProvider') {
         echo "Login admin"
              payload = JsonOutput.toJson([username: "admin", password: "admin"])
