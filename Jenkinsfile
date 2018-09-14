@@ -92,7 +92,7 @@ node('master') {
 
              steps{
                 watUntil {
-                    test = sh script: "curl -b cookiefile -X GET -H 'Content-Type: application/json' -H 'Cache-Control: no-cache' -d '${payload}' 'http://10.189.1.176:8080/njams/api/dataproviderstatistic/dataprovider' "
+                    test = sh script: "curl -b cookiefile -X GET -H 'Content-Type: application/json' -H 'Cache-Control: no-cache' -d '${payload}' 'http://10.189.1.176:8080/njams/api/dataproviderstatistic/dataprovider/10468' "
                     echo "${test[0].projectMessageCount}"
             }
         }
