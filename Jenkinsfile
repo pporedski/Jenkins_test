@@ -82,6 +82,7 @@ node('master') {
 
              echo "Send Projectmessage"
              sh 'java -jar jms-message-sender-1.0-SNAPSHOT-jar-with-dependencies.jar templates/njams4-e2e-test-projectmessage.xml'
+             ls 'java -jar jms-message-sender-1.0-SNAPSHOT-jar-with-dependencies.jar'
 
              echo "Wait with tests, so that messages could be loaded"
              sleep 300
