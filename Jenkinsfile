@@ -87,8 +87,12 @@ node('master') {
              echo "Send Projectmessage"
              sh 'ls'
              sh 'java -jar jms-message-sender-1.0-SNAPSHOT-jar-with-dependencies.jar templates/njams4-e2e-test-projectmessage.xml'
-
              echo "Wait with tests, so that messages could be loaded"
-             sleep 300
+             //sleep 300
+
+             watUntil {
+                 test = sh script: "curl -b cookiefile -X GET -H 'Content-Type: application/json' -H 'Cache-Control: no-cache' -d '${payload}' 'http://10.189.1.176:8080/njams/api/dataproviderstatistic/dataprovider' "
+                 echo "${test[0].projectMessageCount}"
+             }
     }
 }
