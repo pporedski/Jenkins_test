@@ -90,9 +90,11 @@ node('master') {
              echo "Wait with tests, so that messages could be loaded"
              //sleep 300
 
-             watUntil {
-                 test = sh script: "curl -b cookiefile -X GET -H 'Content-Type: application/json' -H 'Cache-Control: no-cache' -d '${payload}' 'http://10.189.1.176:8080/njams/api/dataproviderstatistic/dataprovider' "
-                 echo "${test[0].projectMessageCount}"
-             }
+             steps{
+                watUntil {
+                    test = sh script: "curl -b cookiefile -X GET -H 'Content-Type: application/json' -H 'Cache-Control: no-cache' -d '${payload}' 'http://10.189.1.176:8080/njams/api/dataproviderstatistic/dataprovider' "
+                    echo "${test[0].projectMessageCount}"
+            }
+        }
     }
 }
